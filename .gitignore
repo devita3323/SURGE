@@ -1,0 +1,13 @@
+.env
+.env.*
+.git/
+node_modules/
+.dart_tool/
+.pub-cache/
+build/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+coverage/
+*.log
