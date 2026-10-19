@@ -1,0 +1,140 @@
+{
+  "criteria_version": "SURGE-2.1.1",
+  "adopted_on": "2026-09-07",
+  "status": "owner-adopted proposed priors; retrospective validation pending",
+  "daily_clock": "next_regular_open_after_public_time",
+  "freshness": {"daily_bars_max_calendar_days": 5},
+  "coverage": {
+    "basic": {"setup": 0.70, "heat": 0.80, "direction": 0.80},
+    "clean": {"setup": 0.85, "heat": 0.90, "direction": 0.90, "corroborator": 0.70}
+  },
+  "coil": {
+    "volume_5d_to_prior_55_max": 0.70,
+    "true_range_to_atr14_max": 0.80,
+    "own_history_percentile_max": 25.0,
+    "minimum_sessions_in_10": 3,
+    "lookback_sessions": 10
+  },
+  "t1": {
+    "rvol20_min": 2.0,
+    "rvol60_min": 1.8,
+    "volume_acceleration_3d_min": 1.5,
+    "true_range_to_atr14_min": 1.5,
+    "close_location_base_min": 0.55,
+    "close_location_clean_min": 0.60
+  },
+  "t2": {
+    "confirmation_deadline_sessions": 3,
+    "rvol20_min": 1.5,
+    "close_location_base_min": 0.70,
+    "close_location_clean_min": 0.67,
+    "hold_t1_high_fraction": 0.98,
+    "follow_through_required_of_three": 2,
+    "up_down_volume_ratio_min": 1.0,
+    "five_day_return_min": 0.0
+  },
+  "entry_geometry": {
+    "early_extension_atr_max": 0.75,
+    "early_risk_atr_max": 1.50,
+    "early_t1_age_max": 2,
+    "confirmed_extension_atr_max": 1.25,
+    "confirmed_risk_atr_max": 2.0,
+    "confirmed_t2_age_max": 1,
+    "chase_extension_atr_min": 1.50,
+    "chase_five_day_move_atr_min": 3.0,
+    "chase_t1_age_min": 4
+  },
+  "squeeze": {
+    "minimum_short_pct_float": 12.0,
+    "preferred_short_pct_float": 15.0,
+    "high_fuel_short_pct_float": 15.0,
+    "extreme_fuel_short_pct_float": 25.0,
+    "preferred_days_to_cover": 3.0,
+    "basic_adv20_usd_min": 300000.0,
+    "basic_spread_pct_max": 2.0,
+    "clean_adv20_usd_min": 1000000.0,
+    "clean_spread_pct_max": 1.5,
+    "position_to_adv_pct_max": 2.0
+  },
+  "gamma": {
+    "minimum_daily_snapshots": 10,
+    "maximum_sessions_to_expiry": 10,
+    "wall_distance_atr_max": 1.5,
+    "strip_above_spot_pct": 15.0,
+    "contract_multiplier": 100,
+    "concentration_percentile_min": 80.0,
+    "turnover_percentile_min": 90.0,
+    "oi_growth_percentile_min": 80.0,
+    "gamma_outcome_sessions": 5,
+    "prior_status": "UNVALIDATED_PRIOR",
+    "evidence_levels": ["OPTIONS_STRUCTURE", "SCENARIO_GAMMA", "SIGNED_DEALER_GAMMA"]
+  },
+  "intraday_overlay": {
+    "minimum_baseline_sessions": 20,
+    "time_of_day_relative_volume_min": 2.0,
+    "time_of_day_range_expansion_min": 1.5,
+    "close_location_min": 0.60,
+    "prior_status": "UNVALIDATED_PRIOR",
+    "validation_cohort": "INTRADAY_ONLY"
+  },
+  "catalyst": {
+    "clean_max_source_tier": 3,
+    "novelty_min": 0.65,
+    "syndication_title_similarity": 0.78,
+    "syndication_window_days": 2,
+    "human_confirmation_required": true,
+    "prior_status": "UNVALIDATED_PRIOR"
+  },
+  "insider": {
+    "role_prior_status": "UNVALIDATED_PRIOR",
+    "role_prior_weights": {
+      "cfo": 1.50,
+      "ceo": 1.40,
+      "president": 1.30,
+      "chairman": 1.25,
+      "c_suite": 1.20,
+      "evp_svp": 1.10,
+      "vp": 1.00,
+      "officer": 1.00,
+      "director": 0.80,
+      "ten_pct": 0.35,
+      "other": 0.50
+    },
+    "small_trade_caution_usd": 250000.0,
+    "gross_pressure_floor_usd": {
+      "NANO": 250000.0,
+      "MICRO": 250000.0,
+      "SMALL": 250000.0,
+      "MID": 500000.0,
+      "LARGE": 1500000.0,
+      "MEGA": 5000000.0,
+      "UNKNOWN": 500000.0
+    },
+    "gross_pressure_floor_status": "UNVALIDATED_PRIOR",
+    "population_shrinkage_sessions": 20,
+    "baseline_min_samples": 5,
+    "cmp_prior_years": 3,
+    "tight_cluster_days": 5,
+    "clean_buy_anomaly_min": 70.0,
+    "clean_net_direction_min": 40.0,
+    "clean_sell_anomaly_max": 60.0
+  },
+  "outcomes": {
+    "sessions": 20,
+    "magnitude_sessions": [20, 40, 60],
+    "path_a_up_pct": 20.0,
+    "path_a_down_pct": -10.0,
+    "path_b_mfe_atr": 4.0,
+    "path_c_up_atr": 4.0,
+    "path_c_down_atr": -2.0,
+    "magnitude_up_pct": [20.0, 35.0, 50.0],
+    "minimum_reportable_cohort": 30,
+    "prior_status": "UNVALIDATED_PRIOR"
+  },
+  "ranking": {
+    "clean_order": ["ULTRA_CLEAN_CONFLUENCE", "CLEAN_CONFLUENCE", "CONFIRMED_ACTIVE", "EARLY_ACTIVE", "SETUP_ONLY", "NO_CLEAN_SETUP"],
+    "entry_order": ["CONFIRMED_WINDOW", "EARLY_WINDOW", "NOT_READY", "CHASE_RISK", "INVALIDATED"],
+    "no_quota": true,
+    "master_score_forbidden": true
+  }
+}
